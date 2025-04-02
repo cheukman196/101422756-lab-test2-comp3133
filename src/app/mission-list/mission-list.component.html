@@ -1,0 +1,27 @@
+<h2>Mission List</h2>
+<div *ngIf="displayData.length === 0">
+    <p>No missions available.</p>
+</div>  
+<div *ngFor="let data of displayData;" >
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <img mat-card-avatar src="{{data.links.mission_patch_small}}" width="60" height="60">
+            <mat-card-title>{{data.mission_name}}</mat-card-title>
+            <mat-card-subtitle>Flight #{{data.flight_number}} ({{data.launch_year}})</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div>{{data.details}}</div>
+            <div>
+                Rocket: {{data.rocket.rocket_name}} [{{data.rocket.rocket_type}}]
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+                <a [href]="data.links.article_link"><button mat-button>Article</button></a>
+                <a [href]="data.links.video_link"><button mat-button>Video</button></a>
+                <a [href]="data.links.wikipedia"><button mat-button>Wiki</button></a>
+        </mat-card-actions>
+    </mat-card>
+      
+        
+        
+</div>
