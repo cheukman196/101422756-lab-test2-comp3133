@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MissionListComponent } from './mission-list/mission-list.component';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
+import { MissionDetailsComponent } from './mission-details/mission-details.component';
 
 @Component({
   selector: 'app-root',

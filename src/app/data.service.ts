@@ -8,6 +8,7 @@ import { Mission } from './types/types';
   providedIn: 'root'
 })
 export class DataService {
+
   private fetchedlaunchData: BehaviorSubject<Mission[]> = new BehaviorSubject<Mission[]>([]);
   launchData$ = this.fetchedlaunchData.asObservable();
 
@@ -18,7 +19,7 @@ export class DataService {
     const searchUrl = apiUrl + "?launch_year=" + year
     this.fetchData(searchUrl)
   }
-  
+
   fetchData = (url?: string) => {
     const apiUrl: string = this.config.getSpaceXApi();
 
